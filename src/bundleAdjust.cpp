@@ -12,6 +12,7 @@
 #include "isam/isam.h"
 #include "isam/slam_depthmono.h"
 #include "isam/robust.h"
+#include "pcl_conversions/pcl_conversions.h"
 
 #include "cameraParameters.h"
 #include "pointDefinition.h"
@@ -55,6 +56,7 @@ void diffRotation(double cx, double cy, double cz, double lx, double ly, double 
                 - cos(lz)*sin(lx)*sin(ly)) + cos(cx)*cos(cz)*cos(lx)*cos(lz);
   oz = atan2(srzcrx / cos(ox), crzcrx / cos(ox));
 }
+
 
 void transformAssociateToBA()
 {

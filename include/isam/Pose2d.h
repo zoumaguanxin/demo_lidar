@@ -52,8 +52,8 @@ class Pose2d {
 
 public:
   // assignment operator and copy constructor implicitly created, which is ok
-  static const int dim = 3;
-  static const int size = 3;
+  static const int dim;
+  static const int size;
   static const char* name() {
     return "Pose2d";
   }

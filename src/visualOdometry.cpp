@@ -9,6 +9,7 @@
 #include <tf/transform_datatypes.h>
 #include <tf/transform_listener.h>
 #include <tf/transform_broadcaster.h>
+#include <pcl_conversions/pcl_conversions.h>
 
 #include "cameraParameters.h"
 #include "pointDefinition.h"
@@ -169,6 +170,7 @@ void imagePointsHandler(const sensor_msgs::PointCloud2ConstPtr& imagePoints2)
   imagePointsCur = imagePointsTemp;
 
   imagePointsCur->clear();
+
   pcl::fromROSMsg(*imagePoints2, *imagePointsCur);
 
   imagePointsLastNum = imagePointsCurNum;

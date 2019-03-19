@@ -66,6 +66,7 @@ namespace isam {
 
 typedef Eigen::Matrix< double, 6, 1> Vector6d;
 
+
 class Pose3d {
   friend std::ostream& operator<<(std::ostream& out, const Pose3d& p) {
     p.write(out);
@@ -77,7 +78,7 @@ class Pose3d {
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
-  static const int dim = 6;
+  static const int dim;
   static const char* name() {
     return "Pose3d";
   }
@@ -269,6 +270,7 @@ public:
   Point3d transform_from(const Point3d& p) const {
     return transform_from(Point3dh(p)).to_point3d();
   }
+  
 
 };
 

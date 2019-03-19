@@ -8,6 +8,7 @@
 #include <tf/transform_datatypes.h>
 #include <tf/transform_listener.h>
 #include <tf/transform_broadcaster.h>
+#include <pcl_conversions/pcl_conversions.h>
 
 #include "pointDefinition.h"
 

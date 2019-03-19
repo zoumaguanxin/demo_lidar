@@ -4,6 +4,7 @@
 #include <ros/ros.h>
 
 #include "pointDefinition.h"
+#include <pcl_conversions/pcl_conversions.h>
 
 const double PI = 3.1415926;
 

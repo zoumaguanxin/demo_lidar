@@ -40,7 +40,13 @@
 using namespace std;
 using namespace Eigen;
 
+
+
 namespace isam {
+
+const int Pose3d::dim=6;
+ const int Pose2d::dim = 3;
+ const int Pose2d::size = 3;
 
 VectorXd GLC_RootShift::reparameterize (Selector s) {
 

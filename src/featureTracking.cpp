@@ -5,6 +5,7 @@
 
 #include "cameraParameters.h"
 #include "pointDefinition.h"
+#include "pcl_conversions/pcl_conversions.h"
 
 using namespace std;
 using namespace cv;
@@ -203,7 +204,7 @@ void imageDataHandler(const sensor_msgs::Image::ConstPtr& imageData)
 
   showCount = (showCount + 1) % (showSkipNum + 1);
   if (showCount == showSkipNum) {
-    Mat imageShowMat(imageShow);
+    Mat imageShowMat=cv::Mat(imageShow->width,imageShow->depth,IPL_DEPTH_8U ,imageShow->imageData);
     bridge.image = imageShowMat;
     bridge.encoding = "mono8";
     sensor_msgs::Image::Ptr imageShowPointer = bridge.toImageMsg();
